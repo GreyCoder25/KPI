@@ -1,0 +1,303 @@
+1 row:
+               Lexem              length                Type
+               DATA1                   5          IDENTIFIER
+             SEGMENT                   7           DIRECTIVE
+
+2 row:
+               Lexem              length                Type
+
+3 row:
+               Lexem              length                Type
+              VAR_DB                   6          IDENTIFIER
+                  DB                   2           DIRECTIVE
+               1010B                   5           BIN_CONST
+
+4 row:
+               Lexem              length                Type
+              VAR_DW                   6          IDENTIFIER
+                  DW                   2           DIRECTIVE
+               2904D                   5           DEC_CONST
+
+5 row:
+               Lexem              length                Type
+              VAR_DD                   6          IDENTIFIER
+                  DD                   2           DIRECTIVE
+              384ABH                   6           HEX_CONST
+
+6 row:
+               Lexem              length                Type
+              STRING                   6          IDENTIFIER
+                  DB                   2           DIRECTIVE
+      'autoВаСя'                  14          TEXT_CONST
+
+7 row:
+               Lexem              length                Type
+
+8 row:
+               Lexem              length                Type
+               DATA1                   5          IDENTIFIER
+                ENDS                   4           DIRECTIVE
+
+9 row:
+               Lexem              length                Type
+
+10 row:
+               Lexem              length                Type
+               DATA2                   5          IDENTIFIER
+             SEGMENT                   7           DIRECTIVE
+
+11 row:
+               Lexem              length                Type
+          VAR_DS2_DW                  10          IDENTIFIER
+                  DW                   2           DIRECTIVE
+               5844D                   5           DEC_CONST
+
+12 row:
+               Lexem              length                Type
+               DATA2                   5          IDENTIFIER
+                ENDS                   4           DIRECTIVE
+
+13 row:
+               Lexem              length                Type
+
+14 row:
+               Lexem              length                Type
+               CODE1                   5          IDENTIFIER
+             SEGMENT                   7           DIRECTIVE
+
+15 row:
+               Lexem              length                Type
+              ASSUME                   6           DIRECTIVE
+                  CS                   2             SEG_REG
+                   :                   1         SINGLE_SYMB
+               CODE1                   5          IDENTIFIER
+                   ,                   1         SINGLE_SYMB
+                  DS                   2             SEG_REG
+                   :                   1         SINGLE_SYMB
+               DATA1                   5          IDENTIFIER
+                   ,                   1         SINGLE_SYMB
+                  ES                   2             SEG_REG
+                   :                   1         SINGLE_SYMB
+               DATA2                   5          IDENTIFIER
+
+16 row:
+               Lexem              length                Type
+               BEGIN                   5          IDENTIFIER
+                   :                   1         SINGLE_SYMB
+
+17 row:
+               Lexem              length                Type
+
+18 row:
+               Lexem              length                Type
+                 STC                   3             COMMAND
+
+19 row:
+               Lexem              length                Type
+                 CLD                   3          IDENTIFIER
+
+20 row:
+               Lexem              length                Type
+                 POP                   3             COMMAND
+                 EAX                   3               REG32
+
+21 row:
+               Lexem              length                Type
+                 MUL                   3             COMMAND
+              VAR_DW                   6          IDENTIFIER
+
+22 row:
+               Lexem              length                Type
+                 MOV                   3             COMMAND
+                 EAX                   3               REG32
+                   ,                   1         SINGLE_SYMB
+                 EDX                   3               REG32
+
+23 row:
+               Lexem              length                Type
+                 XOR                   3             COMMAND
+                  AX                   2               REG16
+                   ,                   1         SINGLE_SYMB
+                   [                   1         SINGLE_SYMB
+                 ESI                   3               REG32
+                   ]                   1         SINGLE_SYMB
+
+24 row:
+               Lexem              length                Type
+                 XOR                   3             COMMAND
+                 EAX                   3               REG32
+                   ,                   1         SINGLE_SYMB
+                   [                   1         SINGLE_SYMB
+                  SI                   2               REG16
+                   ]                   1         SINGLE_SYMB
+
+25 row:
+               Lexem              length                Type
+                 XOR                   3             COMMAND
+                  AX                   2               REG16
+                   ,                   1         SINGLE_SYMB
+                   [                   1         SINGLE_SYMB
+                  SI                   2               REG16
+                   ]                   1         SINGLE_SYMB
+
+26 row:
+               Lexem              length                Type
+                 XOR                   3             COMMAND
+                   [                   1         SINGLE_SYMB
+                 EAX                   3               REG32
+                   *                   1         SINGLE_SYMB
+                   2                   1           DEC_CONST
+                   ]                   1         SINGLE_SYMB
+                   ,                   1         SINGLE_SYMB
+                 EDX                   3               REG32
+
+27 row:
+               Lexem              length                Type
+                 SBB                   3          IDENTIFIER
+              VAR_DD                   6          IDENTIFIER
+                   ,                   1         SINGLE_SYMB
+                 EAX                   3               REG32
+
+28 row:
+               Lexem              length                Type
+            CODESEG1                   8          IDENTIFIER
+                   :                   1         SINGLE_SYMB
+
+29 row:
+               Lexem              length                Type
+                 XOR                   3             COMMAND
+                  AL                   2                REG8
+                   ,                   1         SINGLE_SYMB
+              VAR_DB                   6          IDENTIFIER
+
+30 row:
+               Lexem              length                Type
+             @LABEL2                   7          IDENTIFIER
+                   :                   1         SINGLE_SYMB
+
+31 row:
+               Lexem              length                Type
+                 XOR                   3             COMMAND
+                  AX                   2               REG16
+                   ,                   1         SINGLE_SYMB
+                WORD                   4    TYPEDEF OPERATOR
+                 PTR                   3    TYPEDEF OPERATOR
+                   [                   1         SINGLE_SYMB
+                 EBX                   3               REG32
+                   ]                   1         SINGLE_SYMB
+
+32 row:
+               Lexem              length                Type
+                 SUB                   3             COMMAND
+              VAR_DD                   6          IDENTIFIER
+                   ,                   1         SINGLE_SYMB
+                 EAX                   3               REG32
+
+33 row:
+               Lexem              length                Type
+                 JMP                   3             COMMAND
+              VAR_DD                   6          IDENTIFIER
+
+34 row:
+               Lexem              length                Type
+                 CMP                   3             COMMAND
+                  CX                   2               REG16
+                   ,                   1         SINGLE_SYMB
+                   5                   1           DEC_CONST
+
+35 row:
+               Lexem              length                Type
+                 JNC                   3             COMMAND
+             @LABEL1                   7          IDENTIFIER
+
+36 row:
+               Lexem              length                Type
+                 ADC                   3             COMMAND
+              VAR_DW                   6          IDENTIFIER
+                   ,                   1         SINGLE_SYMB
+                   4                   1           DEC_CONST
+
+37 row:
+               Lexem              length                Type
+                 ADC                   3             COMMAND
+                  ES                   2             SEG_REG
+                   :                   1         SINGLE_SYMB
+          VAR_DS2_DW                  10          IDENTIFIER
+                   ,                   1         SINGLE_SYMB
+                   4                   1           DEC_CONST
+
+38 row:
+               Lexem              length                Type
+                 JNC                   3             COMMAND
+             @LABEL2                   7          IDENTIFIER
+
+39 row:
+               Lexem              length                Type
+                 MUL                   3             COMMAND
+                WORD                   4    TYPEDEF OPERATOR
+                 PTR                   3    TYPEDEF OPERATOR
+                   [                   1         SINGLE_SYMB
+                 EAX                   3               REG32
+                   *                   1         SINGLE_SYMB
+                   2                   1           DEC_CONST
+                   ]                   1         SINGLE_SYMB
+
+40 row:
+               Lexem              length                Type
+
+41 row:
+               Lexem              length                Type
+             @LABEL1                   7          IDENTIFIER
+                   :                   1         SINGLE_SYMB
+
+42 row:
+               Lexem              length                Type
+
+43 row:
+               Lexem              length                Type
+                 JMP                   3             COMMAND
+                 FAR                   3    TYPEDEF OPERATOR
+                 PTR                   3    TYPEDEF OPERATOR
+            CODESEG2                   8          IDENTIFIER
+
+44 row:
+               Lexem              length                Type
+
+45 row:
+               Lexem              length                Type
+               CODE1                   5          IDENTIFIER
+                ENDS                   4           DIRECTIVE
+
+46 row:
+               Lexem              length                Type
+               CODE2                   5          IDENTIFIER
+             SEGMENT                   7           DIRECTIVE
+
+47 row:
+               Lexem              length                Type
+              ASSUME                   6           DIRECTIVE
+                  CS                   2             SEG_REG
+                   :                   1         SINGLE_SYMB
+               CODE2                   5          IDENTIFIER
+
+48 row:
+               Lexem              length                Type
+            CODESEG2                   8          IDENTIFIER
+                   :                   1         SINGLE_SYMB
+
+49 row:
+               Lexem              length                Type
+                 JMP                   3             COMMAND
+                 FAR                   3    TYPEDEF OPERATOR
+                 PTR                   3    TYPEDEF OPERATOR
+            CODESEG1                   8          IDENTIFIER
+
+50 row:
+               Lexem              length                Type
+               CODE2                   5          IDENTIFIER
+                ENDS                   4           DIRECTIVE
+
+51 row:
+               Lexem              length                Type
+                 END                   3           DIRECTIVE
+

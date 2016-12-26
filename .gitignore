@@ -1,4 +1,9 @@
 *.pyc
 *.o
 *.docx
+*.doc
+*.odt
+*log.*
+*protocol.*
+*.ppu
 *~

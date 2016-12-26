@@ -1,0 +1,192 @@
+DATA1 SEGMENT 
+Label field     Mnemocode field
+    1              2         1
+
+
+Label field     Mnemocode field
+    0              0         0
+
+VAR_DB DB 10010B 
+Label field     Mnemocode field      1 operand field
+    1              2         1         3         1
+
+VAR_DW DW 2904D 
+Label field     Mnemocode field      1 operand field
+    1              2         1         3         1
+
+VAR_DD DD 384ABH 
+Label field     Mnemocode field      1 operand field
+    1              2         1         3         1
+
+STRING DB 'auto' 
+Label field     Mnemocode field      1 operand field
+    1              2         1         3         1
+
+
+Label field     Mnemocode field
+    0              0         0
+
+DATA1 ENDS 
+Label field     Mnemocode field
+    1              2         1
+
+
+Label field     Mnemocode field
+    0              0         0
+
+DATA2 SEGMENT 
+Label field     Mnemocode field
+    1              2         1
+
+VAR_DS2_DW DW 5844D 
+Label field     Mnemocode field      1 operand field
+    1              2         1         3         1
+
+DATA2 ENDS 
+Label field     Mnemocode field
+    1              2         1
+
+
+Label field     Mnemocode field
+    0              0         0
+
+CODE1 SEGMENT 
+Label field     Mnemocode field
+    1              2         1
+
+ASSUME CS : CODE1 , DS : DATA1 , ES : DATA2 
+Label field     Mnemocode field      1 operand field      2 operand field      3 operand field
+    0              1         1         2         3         6         3        10         3
+
+BEGIN : 
+Label field     Mnemocode field
+    1              0         0
+
+_BEGIN 
+Label field     Mnemocode field      1 operand field
+    0              0         0         1         1
+
+STC 
+Label field     Mnemocode field
+    0              1         1
+
+POP EAX 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         1
+
+MUL VAR_DW 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         1
+
+MOV EAX , EDX 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         1
+
+XOR AX , [ ESI ] 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         3
+
+XOR EAX , [ SI ] 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         3
+
+XOR AX , [ SI ] 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         3
+
+
+Label field     Mnemocode field
+    0              0         0
+
+CODESEG1 : 
+Label field     Mnemocode field
+    1              0         0
+
+XOR AL , VAR_DB 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         1
+
+@LABEL2 : 
+Label field     Mnemocode field
+    1              0         0
+
+XOR AX , WORD PTR [ EBX ] 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         5
+
+SUB VAR_DD , EAX 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         1
+
+JMP VAR_DD 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         1
+
+CMP CX , ES : VAR_DS2_DW 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         3
+
+JNC @LABEL1 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         1
+
+ADC VAR_DW , 4 
+Label field     Mnemocode field      1 operand field      2 operand field
+    0              1         1         2         1         4         1
+
+JNC @LABEL2 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         1
+
+MUL WORD PTR [ EAX * 2 ] 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         7
+
+
+Label field     Mnemocode field
+    0              0         0
+
+@LABEL1 : 
+Label field     Mnemocode field
+    1              0         0
+
+
+Label field     Mnemocode field
+    0              0         0
+
+JMP FAR PTR CODESEG2 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         3
+
+
+Label field     Mnemocode field
+    0              0         0
+
+CODE1 ENDS 
+Label field     Mnemocode field
+    1              2         1
+
+CODE2 SEGMENT 
+Label field     Mnemocode field
+    1              2         1
+
+ASSUME CS : CODE2 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         3
+
+CODESEG2 : 
+Label field     Mnemocode field
+    1              0         0
+
+JMP CODESEG1 
+Label field     Mnemocode field      1 operand field
+    0              1         1         2         1
+
+CODE2 ENDS 
+Label field     Mnemocode field
+    1              2         1
+
+END 
+Label field     Mnemocode field
+    0              1         1
+
